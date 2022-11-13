@@ -1,7 +1,7 @@
 (setq openai-api-key "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 
 (defun gpt-macro-call (api-key prompt data)
-  (setq cmd (concat "python3.9 /path-to-project/gpt-macro/gpt-macro.py \"" api-key "\" \"" prompt "\" \"" data "\""))
+  (setq cmd (concat "python3.9 /path-to-project/gpt-emacs-macro/gpt-macro.py \"" api-key "\" \"" prompt "\" \"" data "\""))
   (shell-command-to-string cmd)
 )
 
