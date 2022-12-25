@@ -6,4 +6,5 @@ Connect GPT-3 to Emacs and run "semantic" kbd macros
 
 [![About](https://raw.githubusercontent.com/samrawal/gpt-macro/main/assets/tweet.png)](https://twitter.com/samarthrawal/status/1591527892386734081)
 
-To use, add your OpenAI API key in `gpt-macro.el` 
+To use, add your OpenAI API key in `gpt-macro.el`
+(Thanks [@jakebox for putting this into a single elisp file](https://github.com/samrawal/gpt-emacs-macro/pull/1)!)
