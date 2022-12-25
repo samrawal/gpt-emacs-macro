@@ -6,7 +6,7 @@
 
 (defvar openai-request-command
   "curl -s -X POST -H \"Content-Type: application/json\" -d '{
-  \"model\": \"text-davinci-002\",
+  \"model\": \"text-davinci-003\",
   \"prompt\": \"%s:\\n\\n%s\",
   \"temperature\": 0.7,
   \"max_tokens\": 256,
