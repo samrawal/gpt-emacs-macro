@@ -27,6 +27,7 @@ If called with prefix argument, don't replace original selection."
   (interactive "P")
   (let* ((selection (buffer-substring-no-properties (region-beginning) (region-end)))
 		 (selection-stripped (replace-regexp-in-string "\n" "\\\\n" selection)) 
+     (selection-stripped (replace-regexp-in-string "\"" "\\\"" selection-stripped t t)) 
 		 (gpt-macro-input (read-string "Command: "))
 		 (gpt-return (gpt-macro-call openai-api-key gpt-macro-input selection-stripped)))
 	(if (not (equal '(4) arg)) ;; unless called with prefix argument delete original text
