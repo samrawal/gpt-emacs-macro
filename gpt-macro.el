@@ -1,5 +1,15 @@
 (setq openai-api-key "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 
+(defun escape-quotes (start end)
+  "Escape all single and double quotes in the selected region."
+  (interactive "r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region start end)
+      (goto-char (point-min))
+      (while (re-search-forward "[\"']" nil t)
+        (replace-match (format "\\%s" (match-string 0)) nil t)))))
+
 (defun gpt-macro-call (api-key prompt data)
   (setq cmd (concat "python3.9 /path-to-project/gpt-emacs-macro/gpt-macro.py \"" api-key "\" \"" prompt "\" \"" data "\""))
   (shell-command-to-string cmd)
