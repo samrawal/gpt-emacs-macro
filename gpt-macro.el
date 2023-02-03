@@ -17,6 +17,7 @@
 
 (defun gpt-macro()
   (interactive)
+  (escape-quotes (region-beginning) (region-end))
   (setq selection  (buffer-substring (region-beginning) (region-end)))
   (setq gpt-macro-input (read-string "Command: "))
   (delete-region (region-beginning) (region-end))
@@ -25,6 +26,7 @@
 
 (defun gpt-macro-noreplace()
   (interactive)
+  (escape-quotes (region-beginning) (region-end))
   (setq selection  (buffer-substring (region-beginning) (region-end)))
   (setq gpt-macro-input (read-string "Command: "))
   (insert (gpt-macro-call openai-api-key gpt-macro-input selection))
